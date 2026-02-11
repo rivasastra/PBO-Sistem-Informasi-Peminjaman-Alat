@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor Admin
+actor Petugas
+
+rectangle "Sistem Peminjaman Alat" {
+
+  Admin -- (Login)
+  Admin -- (Kelola Data Alat)
+  Admin -- (Kelola User)
+  Admin -- (Lihat Laporan)
+
+  Petugas -- (Login)
+  Petugas -- (Input Peminjaman)
+  Petugas -- (Input Pengembalian)
+  Petugas -- (Cek Stok Alat)
+}
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+class User {
+  - idUser : int
+  - username : String
+  - password : String
+  - role : String
+  + login()
+}
+
+class Alat {
+  - idAlat : int
+  - namaAlat : String
+  - stok : int
+  - kondisi : String
+  + tambahAlat()
+  + updateAlat()
+}
+
+class Peminjaman {
+  - idPinjam : int
+  - tanggalPinjam : Date
+  - tanggalKembali : Date
+  - status : String
+  + pinjamAlat()
+  + kembaliAlat()
+}
+
+User "1" -- "*" Peminjaman
+Alat "1" -- "*" Peminjaman
+
+@enduml

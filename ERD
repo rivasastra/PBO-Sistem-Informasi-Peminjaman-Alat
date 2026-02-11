@@ -1,0 +1,29 @@
+@startuml
+
+entity user {
+  +id_user : int <<PK>>
+  username : varchar
+  password : varchar
+  role : varchar
+}
+
+entity alat {
+  +id_alat : int <<PK>>
+  nama_alat : varchar
+  stok : int
+  kondisi : varchar
+}
+
+entity peminjaman {
+  +id_pinjam : int <<PK>>
+  id_user : int <<FK>>
+  id_alat : int <<FK>>
+  tanggal_pinjam : date
+  tanggal_kembali : date
+  status : varchar
+}
+
+user ||--o{ peminjaman
+alat ||--o{ peminjaman
+
+@enduml

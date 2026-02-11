@@ -1,0 +1,28 @@
+CREATE TABLE user (
+ id_user INT AUTO_INCREMENT PRIMARY KEY,
+ username VARCHAR(50),
+ password VARCHAR(50),
+ role VARCHAR(20)
+);
+
+INSERT INTO user VALUES
+(NULL,'admin','123','admin'),
+(NULL,'petugas','123','petugas');
+
+CREATE TABLE alat (
+ id_alat INT AUTO_INCREMENT PRIMARY KEY,
+ nama_alat VARCHAR(100),
+ stok INT,
+ kondisi VARCHAR(50)
+);
+
+CREATE TABLE peminjaman (
+ id_pinjam INT AUTO_INCREMENT PRIMARY KEY,
+ id_user INT,
+ id_alat INT,
+ tanggal_pinjam DATE,
+ tanggal_kembali DATE,
+ status VARCHAR(50),
+ FOREIGN KEY (id_user) REFERENCES user(id_user),
+ FOREIGN KEY (id_alat) REFERENCES alat(id_alat)
+);
